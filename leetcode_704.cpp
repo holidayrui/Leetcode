@@ -13,7 +13,7 @@ Example 2:
 Input: nums = [-1,0,3,5,9,12], target = 2
 Output: -1
 Explanation: 2 does not exist in nums so return -1
- 
+
 
 Constraints:
 
@@ -22,16 +22,32 @@ Constraints:
 All the integers in nums are unique.
 nums is sorted in ascending order. */
 
+#include <iostream>
+#include <vector>
 
+using namespace std;
 
-class Solution {
+class Solution
+{
 public:
-    int search(vector<int>& nums, int target) {
-        for (int i = 0; i < nums.size(); ++i) {
-            if (nums[i] == target) {
+    int search(vector<int> &nums, int target)
+    {
+        for (int i = 0; i < nums.size(); ++i)
+        {
+            if (nums[i] == target)
+            {
                 return i;
             }
         }
         return -1;
     }
 };
+
+int main()
+{
+    int arr[] = {-1, 0, 3, 5, 9, 12};
+    vector<int> nums(arr, arr + sizeof(arr) / sizeof(arr[0]));
+    int target = 9;
+    Solution solution;
+    cout << solution.search(nums, target) << endl;
+}
